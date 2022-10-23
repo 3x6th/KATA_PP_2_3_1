@@ -7,6 +7,27 @@
     <title>Users</title>
 </head>
 <body>
+
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Surname</th>
+        <th>Department</th>
+        <th>Salary</th>
+    </tr>
+    <tbody>
+    <tr th:each="usr : ${allUsers}">
+        <td th:text="${usr.id}"></td>
+        <td th:text="${usr.name}"></td>
+        <td th:text="${usr.surName}"></td>
+        <td th:text="${usr.department}"></td>
+        <td th:text="${usr.salary}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
 <th:block th:each="msg : ${messages}">
     <h1 th:text="${msg}"></h1>
 </th:block>
