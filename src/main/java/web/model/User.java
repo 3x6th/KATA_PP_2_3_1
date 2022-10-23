@@ -16,15 +16,22 @@ public class User {
     @Column(name = "department")
     private String department;
 
+    @Column(name = "salary")
+    private int salary;
+
     public User() {
     }
 
-    public User(int id, String name, String surName, String department) {
-        this.id = id;
+    public User(String name, String surName, String department, int salary) {
         this.name = name;
         this.surName = surName;
         this.department = department;
+        this.salary = salary;
     }
+
+    public int getSalary() { return salary; }
+
+    public void setSalary(int salary) { this.salary = salary; }
 
     public int getId() {
         return id;
@@ -65,6 +72,7 @@ public class User {
                 ", name='" + name + '\'' +
                 ", surName='" + surName + '\'' +
                 ", department='" + department + '\'' +
+                ", salary=" + salary +
                 '}';
     }
 }
