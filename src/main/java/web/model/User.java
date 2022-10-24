@@ -1,9 +1,12 @@
 package web.model;
 
+import org.hibernate.annotations.SelectBeforeUpdate;
+
 import javax.persistence.*;
 
 @Entity
 @Table(name = "users")
+@SelectBeforeUpdate
 public class User {
     @Id
     @Column(name = "id")

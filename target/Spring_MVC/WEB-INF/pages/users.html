@@ -16,6 +16,7 @@
         <th>Surname</th>
         <th>Department</th>
         <th>Salary</th>
+        <th>Operation</th>
     </tr>
     <tbody>
     <tr th:each="usr : ${allUsers}">
@@ -24,13 +25,17 @@
         <td th:text="${usr.surName}"></td>
         <td th:text="${usr.department}"></td>
         <td th:text="${usr.salary}"></td>
+        <td>
+            <form th:method="GET" th:action="@{/updateInfo/{id}(id=${usr.getId()})}">
+                <input type="submit" value="Update"/>
+            </form>
+        </td>
     </tr>
     </tbody>
-
 </table>
 
-<th:block th:each="msg : ${messages}">
-    <h1 th:text="${msg}"></h1>
-</th:block>
+<br>
+<input type="button" value="Add" onclick="window.location.href = 'addNewUser' "/>
+
 </body>
 </html>

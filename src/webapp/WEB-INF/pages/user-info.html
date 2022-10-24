@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org" xmlns:form="http://www.w3.org/1999/html">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User info</title>
+</head>
+<body>
+<h2>User info</h2>
+<br>
+<form th:action="@{/saveUser}" th:object="${user}" method="post">
+    <br>
+    <label th:for="name">Name</label>
+    <input type="text" name="name" th:id="name" th:value="${user.getName()}">
+    <br>
+    <label th:for="surname">Surname</label>
+    <input type="text" name="surName" th:id="surname" th:value="${user.getSurName()}">
+    <br>
+    <label th:for="department">Department</label>
+    <input type="text" name="department" th:id="email" th:value="${user.getDepartment()}">
+    <br>
+    <label th:for="salary">Salary</label>
+    <input type="text" name="salary" th:id="email" th:value="${user.getSalary()}">
+    <br>
+    <button type="submit">Save User</button>
+</form>
+
+</body>
+</html>
