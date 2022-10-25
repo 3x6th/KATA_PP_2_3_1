@@ -18,22 +18,6 @@ public class UsersController {
         this.userService = userService;
     }
 
-//    @GetMapping(value = "/")
-//    public String printWelcome(ModelMap model) {
-//        List<String> messages = new ArrayList<>();
-//        messages.add("Hello!");
-//        model.addAttribute("messages", messages);
-//        return "index";
-//    }
-
-//    @GetMapping(value = "/create")
-//    public String create(ModelMap model) {
-//        List<String> messages = new ArrayList<>();
-//        messages.add("Create page!");
-//        model.addAttribute("messages", messages);
-//        return "create";
-//    }
-
     @GetMapping(value = "/")
     public String printUsers(ModelMap model) {
         List<User> allUsers = userService.getAllUsers();
