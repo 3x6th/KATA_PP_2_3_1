@@ -22,6 +22,7 @@
     <label th:for="salary">Salary</label>
     <input type="text" name="salary" th:id="email" th:value="${user.getSalary()}">
     <br>
+    <input type="hidden" name="id" th:id="id" th:value="${user.getId()}">
     <button type="submit">Save User</button>
 </form>
 

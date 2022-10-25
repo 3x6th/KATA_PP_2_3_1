@@ -58,4 +58,10 @@ public class UsersController {
         model.addAttribute("user", userService.getUser(id));
         return "user-info";
     }
+
+    @PostMapping(value = "deleteUser/{id}")
+    public String deleteUser(@PathVariable int id, ModelMap model) {
+        userService.deleteUser(id);
+        return "redirect:/";
+    }
 }
