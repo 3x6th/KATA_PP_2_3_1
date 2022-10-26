@@ -4,7 +4,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 import web.model.User;
-import web.service.UserServiceImpl;
+import web.service.UserService;
 
 import java.util.List;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @RequestMapping("/")
 public class UsersController {
 
-    private final UserServiceImpl userService;
+    private final UserService userService;
 
-    public UsersController(UserServiceImpl userService) {
+    public UsersController(UserService userService) {
         this.userService = userService;
     }
 
