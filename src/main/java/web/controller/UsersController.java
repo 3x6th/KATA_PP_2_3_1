@@ -9,7 +9,7 @@ import web.service.UserService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/")
+@RequestMapping("/users")
 public class UsersController {
 
     private final UserService userService;
@@ -18,7 +18,7 @@ public class UsersController {
         this.userService = userService;
     }
 
-    @GetMapping(value = "/")
+    @GetMapping
     public String printUsers(ModelMap model) {
         List<User> allUsers = userService.getAllUsers();
         model.addAttribute("allUsers", allUsers);
@@ -34,7 +34,7 @@ public class UsersController {
     @PostMapping(value = "/saveUser")
     public String saveUser(@ModelAttribute("user") User user) {
         userService.saveUser(user);
-        return "redirect:/";
+        return "redirect:/users";
     }
 
     @GetMapping(value = "/updateInfo/{id}")
@@ -46,6 +46,6 @@ public class UsersController {
     @PostMapping(value = "deleteUser/{id}")
     public String deleteUser(@PathVariable int id, ModelMap model) {
         userService.deleteUser(id);
-        return "redirect:/";
+        return "redirect:/users";
     }
 }
